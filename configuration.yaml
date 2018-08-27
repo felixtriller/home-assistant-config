@@ -1,0 +1,111 @@
+homeassistant:
+  name: Home
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  elevation: !secret home_elevation
+  unit_system: metric
+  time_zone: Europe/Berlin
+  customize: !include customize.yaml
+  auth_providers:
+    - type: homeassistant
+    - type: legacy_api_password
+
+frontend:
+config:
+
+http:
+  api_password: !secret http_password
+  base_url: !secret domain
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 127.0.0.1
+    - ::1
+  ip_ban_enabled: true
+  login_attempts_threshold: 3
+  trusted_networks:
+    - 127.0.0.1
+    - ::1
+    - !secret local_network
+
+# updater:
+
+discovery:
+  ignore:
+    - apple_tv
+    - google_cast
+history:
+  exclude:
+    domains:
+      - group
+    entities:
+      - automation.update_notifications
+      - sensor.iphone_x_von_felix_triller_battery_level
+      - sensor.iphone_x_von_felix_triller_battery_state
+      - sensor.last_boot
+      - switch.vacuum
+logbook:
+  include:
+    domains:
+      - light
+      - switch
+      - media_player
+      - vacuum
+      - device_tracker
+    entities:
+      - sensor.latest_hass_version
+  exclude:
+    entities:
+      - switch.vacuum
+influxdb:
+  host: !secret influxdb_ip
+  username: !secret influxdb_username
+  password: !secret influxdb_password
+  database: home_assistant
+  include:
+    entities:
+      - sensor.aqara_sensor_1_humidity
+      - sensor.aqara_sensor_1_pressure
+      - sensor.aqara_sensor_1_temperature
+      - sensor.aqara_sensor_2_humidity
+      - sensor.aqara_sensor_2_pressure
+      - sensor.aqara_sensor_2_temperature
+      - sensor.darksky_humidity
+      - sensor.darksky_pressure
+      - sensor.darksky_temperature
+      - sensor.tradfri_remote_control
+      - sensor.tradfri_remote_control_2
+      - sensor.tradfri_remote_control_3
+
+tradfri:
+  host: !secret tradfri_ip
+  allow_tradfri_groups: false
+vacuum:
+  - platform: xiaomi_miio
+    host: !secret vacuum_ip
+    token: !secret vacuum_token
+    name: Roborock
+map:
+sun:
+ios:
+tts:
+  - platform: google
+cloud:
+  alexa:
+    filter:
+      include_entities:
+        - switch.vacuum
+    entity_config:
+      switch.vacuum:
+        display_categories: OTHER
+
+weather:
+  - platform: darksky_daily
+    api_key: !secret darksky_api_key
+
+group: !include_dir_merge_named groups
+sensor: !include_dir_merge_list sensors
+automation: !include_dir_merge_list automations
+switch: !include_dir_merge_list switches
+zone: !include_dir_merge_list zones
+input_boolean: !include_dir_merge_named input_booleans
+

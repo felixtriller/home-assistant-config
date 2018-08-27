@@ -1,0 +1,107 @@
+title: Zuhause
+
+resources:
+  - url: /local/custom-lovelace/monster-card/monster-card.js?v=0
+    type: js
+  - url: /local/custom-lovelace/entity-attributes-card/entity-attributes-card.js?v=0
+    type: js
+  - url: /local/weather-card/weather-card.js?v=0
+    type: js
+
+views:
+  - title: Home
+    id: home
+    cards:
+      - type: custom:weather-card
+        title: Köln
+        entity_weather: weather.dark_sky_daily
+        entity_sun: sun.sun
+
+      - type: entities
+        title: Current weather
+        entities:
+          - sun.sun
+
+      - type: entities
+        title: Lights
+        show_header_toggle: true
+        entities:
+          - light.tradfri_bulb_e14_ws_opal_400lm_2
+          - light.tradfri_bulb_e27_cws_opal_600lm
+          - light.tradfri_bulb_e27_ws_opal_980lm
+
+      - type: entities
+        title: Climate
+        entities:
+          - sensor.darksky_temperature
+          - sensor.darksky_humidity
+          - sensor.darksky_pressure
+          - type: divider
+          - sensor.aqara_sensor_1_temperature
+          - sensor.aqara_sensor_1_humidity
+          - sensor.aqara_sensor_1_pressure
+          - sensor.aqara_sensor_2_temperature
+          - sensor.aqara_sensor_2_humidity
+          - sensor.aqara_sensor_2_pressure
+
+      - type: entities
+        title: Switches
+        entities:
+          - switch.osram
+
+  - title: Monitoring
+    id: monitoring
+    cards:
+      - type: entities
+        title: Batteries
+        entities:
+          - sensor.tradfri_remote_control
+          - sensor.tradfri_remote_control_2
+          - sensor.tradfri_remote_control_3
+
+      - type: entities
+        title: System
+        entities:
+          - sensor.last_boot
+          - sensor.ssl_certificate_expiry
+          - sensor.current_hass_version
+
+  - title: Floorplan
+    panel: true
+    cards:
+      - type: picture-elements
+        image: https://upload.wikimedia.org/wikipedia/commons/2/26/Palais_Lanckoro%C5%84ski_ground_floor_plan.svg
+        elements:
+          - type: state-icon
+            entity: light.tradfri_bulb_e27_ws_opal_980lm
+            style:
+              top: 50%
+              left: 50%
+
+  - title: Misc
+    id: misc
+    cards:
+      - type: media-control
+        entity: media_player.kuche
+
+      - type: media-control
+        entity: media_player.wohnzimmer
+
+      - type: entities
+        title: Automation
+        show_header_toggle: true
+        entities:
+          - automation.update_notifications
+
+      - type: entities
+        title: Vacuum
+        show_header_toggle: true
+        entities:
+          - vacuum.roborock
+
+      - type: entities
+        title: Zone
+        show_header_toggle: true
+        entities:
+          - zone.home
+

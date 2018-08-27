@@ -1,0 +1,9 @@
+- alias: Update notifications
+  trigger:
+    - platform: state
+      entity_id: sensor.latest_hass_version
+  action:
+    service: notify.ios_iphone_x_von_felix_triller
+    data_template: 
+      title: 'New Home Assistant Release'
+      message: "Home Assistant {{ states.sensor.latest_hass_version.state }} is now available."

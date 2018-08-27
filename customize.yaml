@@ -1,0 +1,10 @@
+media_player.kuche:
+  friendly_name: Sonos Küche
+media_player.wohnzimmer:
+  friendly_name: Sonos Wohnzimmer
+light.tradfri_bulb_e14_ws_opal_400lm_2:
+  friendly_name: Licht Schlafzimmer
+light.tradfri_bulb_e27_ws_opal_980lm:
+  friendly_name: Licht Wohnzimmer
+light.tradfri_bulb_e27_cws_opal_600lm:
+  friendly_name: Licht Kinderzimmer
