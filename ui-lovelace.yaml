@@ -1,10 +1,6 @@
 title: Zuhause
 
 resources:
-  - url: /local/custom-lovelace/monster-card/monster-card.js?v=0
-    type: js
-  - url: /local/custom-lovelace/entity-attributes-card/entity-attributes-card.js?v=0
-    type: js
   - url: /local/weather-card/weather-card.js?v=0
     type: js
 

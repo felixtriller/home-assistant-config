@@ -8,7 +8,7 @@ tts/
 .storage
 .ios.conf
 .tradfri_psk.conf
-
+.HA_VERSION
 home-assistant.log
 home-assistant_v2.db
 

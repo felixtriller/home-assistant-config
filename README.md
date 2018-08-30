@@ -1,5 +1,7 @@
 # 🏡 Configuration for [Home Assistant](https://www.home-assistant.io/)
 
+[![Build Status](https://travis-ci.org/felixtriller/home-assistant-config.svg?branch=master)](https://travis-ci.org/felixtriller/home-assistant-config)
+
 ## Stack
 
 * Docker
@@ -25,4 +27,5 @@
 ### 📺 Other
 
 * Sonos One with integrated Alexa
+* Xiaomi Roborock S50 vacuum robot
 
