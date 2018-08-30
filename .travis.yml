@@ -1,3 +1,4 @@
+---
 language: python
 python:
   - "3.6"
@@ -7,4 +8,4 @@ install:
   - pip3 install homeassistant yamllint
 script:
   - hass -c . --script check_config
-  - yamllint *.yaml
+  - yamllint .

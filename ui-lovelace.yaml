@@ -1,3 +1,4 @@
+---
 title: Zuhause
 
 resources:
@@ -62,18 +63,6 @@ views:
           - sensor.ssl_certificate_expiry
           - sensor.current_hass_version
 
-  - title: Floorplan
-    panel: true
-    cards:
-      - type: picture-elements
-        image: https://upload.wikimedia.org/wikipedia/commons/2/26/Palais_Lanckoro%C5%84ski_ground_floor_plan.svg
-        elements:
-          - type: state-icon
-            entity: light.tradfri_bulb_e27_ws_opal_980lm
-            style:
-              top: 50%
-              left: 50%
-
   - title: Misc
     id: misc
     cards:
@@ -100,4 +89,3 @@ views:
         show_header_toggle: true
         entities:
           - zone.home
-

@@ -1,3 +1,4 @@
+---
 - platform: template
   sensors:
     darksky_temperature:
@@ -9,7 +10,7 @@
       friendly_name: Dark Sky Pressure
       unit_of_measurement: 'hPa'
       value_template: "{{ states.weather.dark_sky_daily.attributes.pressure }}"
-      
+
     darksky_humidity:
       friendly_name: Dark Sky Humidity
       unit_of_measurement: '%'
