@@ -46,6 +46,13 @@ views:
         entities:
           - switch.osram
 
+      - type: entities
+        title: Vacuum
+        show_header_toggle: false
+        entities:
+          - vacuum.roborock
+          - switch.vacuum
+
   - title: Monitoring
     id: monitoring
     cards:
@@ -77,12 +84,6 @@ views:
         show_header_toggle: true
         entities:
           - automation.update_notifications
-
-      - type: entities
-        title: Vacuum
-        show_header_toggle: true
-        entities:
-          - vacuum.roborock
 
       - type: entities
         title: Zone
