@@ -1,3 +1,4 @@
+---
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -8,13 +9,13 @@ metadata:
     external-dns.alpha.kubernetes.io/target: "fritzbox.aomame.de"
 spec:
   tls:
-  - secretName: home-assistant-tls
-    hosts:
-    - hass.lan.aomame.de
+    - secretName: home-assistant-tls
+      hosts:
+      - hass.aomame.de
   rules:
-  - host: hass.lan.aomame.de
-    http:
-      paths:
-      - backend:
-          serviceName: home-assistant
-          servicePort: 80
+    - host: hass.aomame.de
+      http:
+        paths:
+          - backend:
+              serviceName: home-assistant
+              servicePort: 80
