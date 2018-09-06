@@ -11,7 +11,7 @@ spec:
   tls:
     - secretName: home-assistant-tls
       hosts:
-      - hass.aomame.de
+        - hass.aomame.de
   rules:
     - host: hass.aomame.de
       http:
