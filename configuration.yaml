@@ -57,26 +57,28 @@ logbook:
   exclude:
     entities:
       - switch.vacuum
-# influxdb:
-#   host: !secret influxdb_ip
-#   username: !secret influxdb_username
-#   password: !secret influxdb_password
-#   database: home_assistant
-#   include:
-#     entities:
-#       - sensor.aqara_sensor_1_humidity
-#       - sensor.aqara_sensor_1_pressure
-#       - sensor.aqara_sensor_1_temperature
-#       - sensor.aqara_sensor_2_humidity
-#       - sensor.aqara_sensor_2_pressure
-#       - sensor.aqara_sensor_2_temperature
-#       - sensor.darksky_humidity
-#       - sensor.darksky_pressure
-#       - sensor.darksky_temperature
-#       - sensor.tradfri_remote_control
-#       - sensor.tradfri_remote_control_2
-#       - sensor.tradfri_remote_control_3
-
+influxdb:
+  host: influxdb
+  username: !secret influxdb_username
+  password: !secret influxdb_password
+  database: home_assistant
+  include:
+    entities:
+      - sensor.aqara_sensor_1_humidity
+      - sensor.aqara_sensor_1_pressure
+      - sensor.aqara_sensor_1_temperature
+      - sensor.aqara_sensor_2_humidity
+      - sensor.aqara_sensor_2_pressure
+      - sensor.aqara_sensor_2_temperature
+      - sensor.darksky_humidity
+      - sensor.darksky_pressure
+      - sensor.darksky_temperature
+      - sensor.tradfri_remote_control
+      - sensor.tradfri_remote_control_2
+      - sensor.tradfri_remote_control_3
+deconz:
+  host: 192.168.178.5
+  port: 8080
 tradfri:
   host: !secret tradfri_ip
   allow_tradfri_groups: false
