@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: home-assistant
+  labels:
+    app: home-assistant
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: home-assistant
+  template:
+    metadata:
+      labels:
+        app: home-assistant
+    spec:
+      containers:
+      - name: home-assistant
+        image: homeassistant/home-assistant:0.77.3
+        ports:
+        - containerPort: 8123
+        volumeMounts:
+          - name: home-assistant-config
+            mountPath: /config
+          - name: localtime
+            mountPath: /etc/localtime
+            readOnly: true
+      volumes:
+        - name: home-assistant-config
+          hostPath:
+            path: /home/felix/home-assistant-config
+        - name: localtime
+          hostPath:
+            path: /etc/localtime
