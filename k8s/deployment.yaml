@@ -26,10 +26,10 @@ spec:
             - name: localtime
               mountPath: /etc/localtime
               readOnly: true
-        volumes:
-          - name: home-assistant-config
-            hostPath:
-              path: /home/felix/home-assistant-config
-          - name: localtime
-            hostPath:
-              path: /etc/localtime
+      volumes:
+        - name: home-assistant-config
+          hostPath:
+            path: /home/felix/home-assistant-config
+        - name: localtime
+          hostPath:
+            path: /etc/localtime
