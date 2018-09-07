@@ -5,6 +5,7 @@
 ## Stack
 
 * Docker
+* Kubernetes
 * Home Assistant
 * [deCONZ](https://github.com/dresden-elektronik/deconz-rest-plugin)
 * InfluxDB
@@ -12,8 +13,8 @@
 
 ## Hardware
 
-* Raspberry PI 3 MODEL B+
-* [deCONZ ConBee ZigBee USB stick](https://www.dresden-elektronik.de/conbee/)
+* [This computer](http://browser.geekbench.com/v4/cpu/9722140) running Kubernetes on a Proxmox VE
+* [deCONZ ConBee ZigBee USB stick](https://www.dresden-elektronik.de/conbee/) running on a Raspberry PI 3 MODEL B+
 
 ### 💡 Lights, plugs, etc.
 
@@ -28,4 +29,3 @@
 
 * Sonos One with integrated Alexa
 * Xiaomi Roborock S50 vacuum robot
-

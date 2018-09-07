@@ -70,6 +70,12 @@ influxdb:
       - sensor.aqara_sensor_2_humidity
       - sensor.aqara_sensor_2_pressure
       - sensor.aqara_sensor_2_temperature
+      - sensor.aqara_sensor_3_temperature
+      - sensor.aqara_sensor_3_humidity
+      - sensor.aqara_sensor_3_pressure
+      - sensor.aqara_sensor_4_temperature
+      - sensor.aqara_sensor_4_humidity
+      - sensor.aqara_sensor_4_pressure
       - sensor.darksky_humidity
       - sensor.darksky_pressure
       - sensor.darksky_temperature
