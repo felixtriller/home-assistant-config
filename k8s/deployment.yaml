@@ -15,8 +15,8 @@ spec:
       labels:
         app: home-assistant
     spec:
-      hostNetwork: true
-      dnsPolicy: ClusterFirstWithHostNet
+      # hostNetwork: true
+      # dnsPolicy: ClusterFirstWithHostNet
       containers:
         - name: home-assistant
           image: homeassistant/home-assistant:0.77.3
@@ -28,6 +28,12 @@ spec:
             - name: localtime
               mountPath: /etc/localtime
               readOnly: true
+          env:
+            - name: db_url
+              valueFrom:
+                secretKeyRef:
+                  name: home-assistant-secrets
+                  key: db_url
       volumes:
         - name: home-assistant-config
           hostPath:

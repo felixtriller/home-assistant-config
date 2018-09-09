@@ -35,22 +35,23 @@ views:
           - sensor.darksky_pressure
           - type: divider
           - sensor.aqara_sensor_1_temperature
-          - sensor.aqara_sensor_1_humidity
-          - sensor.aqara_sensor_1_pressure
           - sensor.aqara_sensor_2_temperature
-          - sensor.aqara_sensor_2_humidity
-          - sensor.aqara_sensor_2_pressure
           - sensor.aqara_sensor_3_temperature
-          - sensor.aqara_sensor_3_humidity
-          - sensor.aqara_sensor_3_pressure
           - sensor.aqara_sensor_4_temperature
+          - sensor.aqara_sensor_1_humidity
+          - sensor.aqara_sensor_2_humidity
+          - sensor.aqara_sensor_3_humidity
           - sensor.aqara_sensor_4_humidity
+          - sensor.aqara_sensor_1_pressure
+          - sensor.aqara_sensor_2_pressure
+          - sensor.aqara_sensor_3_pressure
           - sensor.aqara_sensor_4_pressure
 
       - type: entities
         title: Switches
+        show_header_toggle: false
         entities:
-          - switch.osram
+          - switch.osram_plug_1
 
       - type: entities
         title: Vacuum
