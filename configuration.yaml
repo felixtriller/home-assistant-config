@@ -57,17 +57,16 @@ recorder:
       - weather
     entities:
       - sun.sun
-
-history:
-  exclude:
-    domains:
-      - group
-    entities:
       - automation.update_notifications
       - sensor.iphone_x_von_felix_triller_battery_level
       - sensor.iphone_x_von_felix_triller_battery_state
       - sensor.last_boot
       - switch.vacuum
+
+history:
+  exclude:
+    domains:
+      - group
 
 logbook:
   include:
