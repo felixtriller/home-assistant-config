@@ -26,15 +26,38 @@ http:
   trusted_networks:
     - 127.0.0.1
     - ::1
-    - !secret local_network
+    - 192.168.178.0/24
 
-# updater:
+map:
+sun:
+ios:
+tts:
+  - platform: google
+
+cloud:
+  alexa:
+    filter:
+      include_entities:
+        - switch.vacuum
+    entity_config:
+      switch.vacuum:
+        display_categories: OTHER
 
 discovery:
   ignore:
     - apple_tv
     - google_cast
     - sonos
+
+recorder:
+  db_url: !env_var DATABASE_URL
+  purge_keep_days: 30
+  exclude:
+    domains:
+      - weather
+    entities:
+      - sun.sun
+
 history:
   exclude:
     domains:
@@ -45,6 +68,7 @@ history:
       - sensor.iphone_x_von_felix_triller_battery_state
       - sensor.last_boot
       - switch.vacuum
+
 logbook:
   include:
     domains:
@@ -58,6 +82,7 @@ logbook:
   exclude:
     entities:
       - switch.vacuum
+
 influxdb:
   host: influxdb
   username: !secret influxdb_username
@@ -83,35 +108,26 @@ influxdb:
       - sensor.tradfri_remote_control
       - sensor.tradfri_remote_control_2
       - sensor.tradfri_remote_control_3
+
 deconz:
   host: 192.168.178.5
   port: 8080
+
 tradfri:
-  host: !secret tradfri_ip
+  host: 192.168.178.23
   allow_tradfri_groups: false
+
 vacuum:
   - platform: xiaomi_miio
-    host: !secret vacuum_ip
+    host: 192.168.178.43
     token: !secret vacuum_token
     name: Roborock
+
 sonos:
   media_player:
     hosts:
       - 192.168.178.31
       - 192.168.178.32
-map:
-sun:
-ios:
-tts:
-  - platform: google
-cloud:
-  alexa:
-    filter:
-      include_entities:
-        - switch.vacuum
-    entity_config:
-      switch.vacuum:
-        display_categories: OTHER
 
 weather:
   - platform: darksky_daily

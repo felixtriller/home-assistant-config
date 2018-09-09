@@ -29,7 +29,7 @@ spec:
               mountPath: /etc/localtime
               readOnly: true
           env:
-            - name: db_url
+            - name: DATABASE_URL
               valueFrom:
                 secretKeyRef:
                   name: home-assistant-secrets
