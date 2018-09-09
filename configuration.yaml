@@ -34,6 +34,7 @@ discovery:
   ignore:
     - apple_tv
     - google_cast
+    - sonos
 history:
   exclude:
     domains:
@@ -93,6 +94,11 @@ vacuum:
     host: !secret vacuum_ip
     token: !secret vacuum_token
     name: Roborock
+sonos:
+  media_player:
+    hosts:
+      - 192.168.178.31
+      - 192.168.178.32
 map:
 sun:
 ios:
