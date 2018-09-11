@@ -74,8 +74,13 @@ views:
         title: System
         entities:
           - sensor.last_boot
-          - sensor.ssl_certificate_expiry
           - sensor.current_hass_version
+
+      - type: entities
+        title: Power consumption
+        entities:
+          - sensor.innr_sp_120_kwh
+          - sensor.innr_sp_120_watts
 
   - title: Misc
     id: misc

@@ -107,10 +107,11 @@ influxdb:
       - sensor.tradfri_remote_control
       - sensor.tradfri_remote_control_2
       - sensor.tradfri_remote_control_3
+      - sensor.innr_sp_120_watts
+      - sensor.innr_sp_120_kwh
 
 deconz:
   host: 192.168.178.5
-  port: 8080
 
 tradfri:
   host: 192.168.178.23
