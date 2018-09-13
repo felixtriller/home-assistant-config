@@ -1,0 +1,14 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: node-red
+  labels:
+    app: node-red
+spec:
+  selector:
+    app: node-red
+  ports:
+    - protocol: TCP
+      port: 1880
+      targetPort: 1880
