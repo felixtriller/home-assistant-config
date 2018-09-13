@@ -1,0 +1,29 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-red
+  labels:
+    app: node-red
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-red
+  template:
+    metadata:
+      labels:
+        app: node-red
+    spec:
+      containers:
+        - name: node-red
+          image: nodered/node-red-docker:v8
+          ports:
+            - containerPort: 1880
+          volumeMounts:
+            - name: node-red-data
+              mountPath: /data
+      volumes:
+        - name: node-red-data
+          hostPath:
+            path: /home/felix/node-red-data

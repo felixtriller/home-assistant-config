@@ -7,6 +7,7 @@
 * Docker
 * Kubernetes
 * Home Assistant
+* Node Red
 * [deCONZ](https://github.com/dresden-elektronik/deconz-rest-plugin)
 * InfluxDB
 * Grafana
@@ -19,11 +20,13 @@
 ### 💡 Lights, plugs, etc.
 
 * IKEA TRÅDFRI with several lights and remotes
-* Osram Smart+ Plug
+* Osram Smart+ plug
+* Innr SP 120 plug
 
 ### 📡 Sensors
 
 * [Xiaomi Aqara Temperature and Humidity Sensor](https://xiaomi-mi.com/sockets-and-sensors/aqara-temperature-and-humidity-sensor/)
+* [Xiaomi Aqara Window Door Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-aqara-window-door-sensor/)
 
 ### 📺 Other
 
