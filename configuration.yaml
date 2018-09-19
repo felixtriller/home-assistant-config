@@ -89,6 +89,7 @@ influxdb:
   database: home_assistant
   include:
     entities:
+      - binary_sensor.aqara_door_1
       - sensor.aqara_sensor_1_humidity
       - sensor.aqara_sensor_1_pressure
       - sensor.aqara_sensor_1_temperature
@@ -120,7 +121,7 @@ tradfri:
 vacuum:
   - platform: xiaomi_miio
     host: 192.168.178.43
-    token: !secret vacuum_token
+    token: !env_var VACUUM_TOKEN
     name: Roborock
 
 sonos:
@@ -131,7 +132,7 @@ sonos:
 
 weather:
   - platform: darksky_daily
-    api_key: !secret darksky_api_key
+    api_key: !env_var DARK_SKY_API_TOKEN
 
 group: !include_dir_merge_named groups
 sensor: !include_dir_merge_list sensors

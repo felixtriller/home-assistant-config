@@ -15,11 +15,9 @@ spec:
       labels:
         app: home-assistant
     spec:
-      # hostNetwork: true
-      # dnsPolicy: ClusterFirstWithHostNet
       containers:
         - name: home-assistant
-          image: homeassistant/home-assistant:0.77.3
+          image: homeassistant/home-assistant:0.78.0
           ports:
             - containerPort: 8123
           volumeMounts:
@@ -34,6 +32,16 @@ spec:
                 secretKeyRef:
                   name: home-assistant-secrets
                   key: db_url
+            - name: VACUUM_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: home-assistant-secrets
+                  key: vacuum_token
+            - name: DARK_SKY_API_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: home-assistant-secrets
+                  key: dark_sky_api_token
       volumes:
         - name: home-assistant-config
           hostPath:
