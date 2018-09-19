@@ -3,9 +3,10 @@ language: python
 python:
   - "3.6"
 env:
-  - DATABASE_URL=mysql://user:password@SERVER_IP/DB_NAME?charset=utf8
-  - VACUUM_TOKEN=e0000000000000000000000000000000
-  - DARK_SKY_API_TOKEN=e0000000000000000000000000000000
+  global:
+    - DATABASE_URL=mysql://user:password@SERVER_IP/DB_NAME?charset=utf8
+    - VACUUM_TOKEN=e0000000000000000000000000000000
+    - DARK_SKY_API_TOKEN=e0000000000000000000000000000000
 before_install:
   - mv travis_secrets.yaml secrets.yaml
 install:
