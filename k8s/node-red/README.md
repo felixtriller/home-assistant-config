@@ -1,4 +1,4 @@
-# Pitfallse
+# Pitfalls
 
 * use a v8 docker image
 * enabel [Home Assistant API](https://www.home-assistant.io/components/api/) if you are not on HASS.io
