@@ -31,8 +31,6 @@ http:
 map:
 sun:
 ios:
-tts:
-  - platform: google
 
 cloud:
   alexa:
@@ -129,6 +127,11 @@ sonos:
     hosts:
       - 192.168.178.31
       - 192.168.178.32
+
+homekit:
+  filter:
+    include_entities:
+      - switch.osram_plug_1
 
 weather:
   - platform: darksky_daily

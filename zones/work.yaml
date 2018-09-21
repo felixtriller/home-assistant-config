@@ -4,3 +4,4 @@
   longitude: !secret work_longitude
   radius: 50
   icon: mdi:office-building
+  track_ios: false
