@@ -44,6 +44,11 @@ spec:
                 secretKeyRef:
                   name: home-assistant-secrets
                   key: dark_sky_api_token
+            - name: MQTT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: home-assistant-secrets
+                  key: mqtt_password
       volumes:
         - name: home-assistant-config
           hostPath:

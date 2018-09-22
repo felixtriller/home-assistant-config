@@ -3,15 +3,18 @@
   sensors:
     darksky_temperature:
       friendly_name: Dark Sky Temperature
-      unit_of_measurement: '°C'
+      unit_of_measurement: °C
+      icon: mdi:thermometer
       value_template: "{{ states.weather.dark_sky_daily.attributes.temperature }}"
 
     darksky_pressure:
       friendly_name: Dark Sky Pressure
-      unit_of_measurement: 'hPa'
+      unit_of_measurement: hPa
+      icon: mdi:water-gauge
       value_template: "{{ states.weather.dark_sky_daily.attributes.pressure }}"
 
     darksky_humidity:
       friendly_name: Dark Sky Humidity
-      unit_of_measurement: '%'
+      unit_of_measurement: "%"
+      icon: mdi:water-percent
       value_template: "{{ states.weather.dark_sky_daily.attributes.humidity }}"

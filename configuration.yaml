@@ -47,6 +47,9 @@ discovery:
     - google_cast
     - sonos
 
+logger:
+  default: warn
+
 recorder:
   db_url: !env_var DATABASE_URL
   purge_keep_days: 30
@@ -79,6 +82,18 @@ logbook:
   exclude:
     entities:
       - switch.vacuum
+
+mqtt:
+  broker: mosquitto
+  username: homeassistant
+  password: !env_var MQTT_PASSWORD
+  discovery: true
+  birth_message:
+    topic: 'hass/status'
+    payload: 'online'
+  will_message:
+    topic: 'hass/status'
+    payload: 'offline'
 
 influxdb:
   host: influxdb
