@@ -39,8 +39,8 @@ spec:
           configMap:
             name: mosquitto
             items:
-            - key: mosquitto.conf
-              path: mosquitto.conf
+              - key: mosquitto.conf
+                path: mosquitto.conf
         - name: mosquitto-passwd
           secret:
             secretName: mosquitto-secrets

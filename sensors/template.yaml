@@ -10,7 +10,7 @@
     darksky_pressure:
       friendly_name: Dark Sky Pressure
       unit_of_measurement: hPa
-      icon_template: mdi:water-gauge
+      icon_template: mdi:gauge
       value_template: "{{ states.weather.dark_sky_daily.attributes.pressure }}"
 
     darksky_humidity:
