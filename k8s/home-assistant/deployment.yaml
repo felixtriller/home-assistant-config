@@ -19,7 +19,7 @@ spec:
       dnsPolicy: ClusterFirstWithHostNet
       containers:
         - name: home-assistant
-          image: homeassistant/home-assistant:0.78.2
+          image: homeassistant/home-assistant:0.79.0
           ports:
             - containerPort: 8123
           volumeMounts:
@@ -29,6 +29,11 @@ spec:
               mountPath: /etc/localtime
               readOnly: true
           env:
+            - name: HTTP_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: home-assistant-secrets
+                  key: http_password
             - name: DATABASE_URL
               valueFrom:
                 secretKeyRef:
@@ -49,6 +54,26 @@ spec:
                 secretKeyRef:
                   name: home-assistant-secrets
                   key: mqtt_password
+            - name: SPOTIFY_ID
+              valueFrom:
+                secretKeyRef:
+                  name: home-assistant-secrets
+                  key: spotify_id
+            - name: SPOTIFY_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: home-assistant-secrets
+                  key: spotify_secret
+            - name: INFLUXDB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: home-assistant-secrets
+                  key: influxdb_username
+            - name: INFLUXDB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: home-assistant-secrets
+                  key: influxdb_password
       volumes:
         - name: home-assistant-config
           hostPath:

@@ -14,18 +14,16 @@ homeassistant:
 frontend:
 config:
 api:
+websocket_api:
 http:
-  api_password: !secret http_password
+  api_password: !env_var HTTP_PASSWORD
   base_url: !secret domain
   use_x_forwarded_for: true
   trusted_proxies:
-    - 127.0.0.1
-    - ::1
+    - 192.168.178.3
   ip_ban_enabled: true
   login_attempts_threshold: 3
   trusted_networks:
-    - 127.0.0.1
-    - ::1
     - 192.168.178.0/24
 
 map:
@@ -97,8 +95,8 @@ mqtt:
 
 influxdb:
   host: influxdb
-  username: !secret influxdb_username
-  password: !secret influxdb_password
+  username: !env_var INFLUXDB_USERNAME
+  password: !env_var INFLUXDB_PASSWORD
   database: home_assistant
   include:
     entities:
@@ -142,6 +140,11 @@ sonos:
     hosts:
       - 192.168.178.31
       - 192.168.178.32
+
+media_player:
+  - platform: spotify
+    client_id: !env_var SPOTIFY_ID
+    client_secret: !env_var SPOTIFY_SECRET
 
 homekit:
   filter:

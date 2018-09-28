@@ -8,6 +8,8 @@ tts/
 .storage
 .ios.conf
 .tradfri_psk.conf
+.homekit.state
+.spotify-token-cache
 .HA_VERSION
 home-assistant.log
 home-assistant_v2.db
