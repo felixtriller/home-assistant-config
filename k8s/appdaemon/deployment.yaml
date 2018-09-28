@@ -1,0 +1,37 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: appdaemon
+  labels:
+    app: appdaemon
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: appdaemon
+  template:
+    metadata:
+      labels:
+        app: appdaemon
+    spec:
+      containers:
+        - name: appdaemon
+          image: acockburn/appdaemon:3.0.1
+          ports:
+            - containerPort: 5050
+          volumeMounts:
+            - name: appdaemon-config
+              mountPath: /conf
+          env:
+            - name: HA_URL
+              value: http://home-assistant:8123
+            - name: HA_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: home-assistant-secrets
+                  key: http_password
+      volumes:
+        - name: appdaemon-config
+          hostPath:
+            path: /home/felix/appdaemon-config
