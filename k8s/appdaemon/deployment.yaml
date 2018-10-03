@@ -31,6 +31,9 @@ spec:
                 secretKeyRef:
                   name: home-assistant-secrets
                   key: http_password
+                  # https://github.com/home-assistant/appdaemon/issues/340
+                  # name: appdaemon-secrets
+                  # key: ha_key
       volumes:
         - name: appdaemon-config
           hostPath:

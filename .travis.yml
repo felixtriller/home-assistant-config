@@ -13,6 +13,8 @@ env:
     - MQTT_PASSWORD=supersecret
     - INFLUXDB_USERNAME=user
     - INFLUXDB_PASSWORD=supersecret
+    - PUSHOVER_API_KEY=e0000000000000000000000000000000
+    - PUSHOVER_USER_KEY=e0000000000000000000000000000000
 before_install:
   - mv travis_secrets.yaml secrets.yaml
 install:
