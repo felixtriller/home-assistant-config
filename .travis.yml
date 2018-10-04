@@ -6,7 +6,7 @@ install:
   - pip3 install homeassistant yamllint
 before_script:
   - mv travis_secrets.yaml secrets.yaml
+  - export $(cat .env.travis | xargs)
 script:
-  - source .env.travis
   - hass -c . --script check_config
   - yamllint .
