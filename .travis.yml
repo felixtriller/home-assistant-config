@@ -2,11 +2,11 @@
 language: python
 python:
   - "3.6"
-before_install:
-  - mv .env.travis .env
-  - mv travis_secrets.yaml secrets.yaml
 install:
   - pip3 install homeassistant yamllint
+before_script:
+  - mv travis_secrets.yaml secrets.yaml
 script:
+  - source .env.travis
   - hass -c . --script check_config
   - yamllint .
