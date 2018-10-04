@@ -17,7 +17,7 @@ api:
 websocket_api:
 http:
   api_password: !env_var HTTP_PASSWORD
-  base_url: !secret domain
+  base_url: https://hass.aomame.de
   use_x_forwarded_for: true
   trusted_proxies:
     - 192.168.178.3
