@@ -4,4 +4,3 @@
   longitude: !secret home_longitude
   radius: 100
   icon: mdi:home
-  track_ios: false

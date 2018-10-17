@@ -19,7 +19,7 @@ spec:
       dnsPolicy: ClusterFirstWithHostNet
       containers:
         - name: home-assistant
-          image: homeassistant/home-assistant:0.79.3
+          image: homeassistant/home-assistant:0.80.2
           ports:
             - containerPort: 8123
           volumeMounts:
