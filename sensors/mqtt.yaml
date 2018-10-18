@@ -15,3 +15,7 @@
   value_template: "{{ value_json.humidity }}"
   json_attributes:
     - battery
+- platform: mqtt
+  name: Bridge state
+  state_topic: zigbee2mqtt/bridge/state
+  icon: mdi:router-wireless

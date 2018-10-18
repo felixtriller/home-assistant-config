@@ -165,3 +165,4 @@ automation: !include_dir_merge_list automations
 switch: !include_dir_merge_list switches
 zone: !include_dir_merge_list zones
 input_boolean: !include_dir_merge_named input_booleans
+timer: !include_dir_merge_named timers
