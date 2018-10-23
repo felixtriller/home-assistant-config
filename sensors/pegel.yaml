@@ -1,6 +1,7 @@
 ---
 - platform: rest
   name: Rheinpegel
-  resource: https://www.pegelonline.wsv.de/webservices/rest-api/v2/stations/K%C3%96LN/W.json?includeCurrentMeasurement=true
+  resource: >
+    https://www.pegelonline.wsv.de/webservices/rest-api/v2/stations/K%C3%96LN/W.json?includeCurrentMeasurement=true
   value_template: '{{ value_json.currentMeasurement.value }}'
   unit_of_measurement: cm
