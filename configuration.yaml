@@ -44,6 +44,7 @@ discovery:
     - apple_tv
     - google_cast
     - sonos
+    - igd
 
 logger:
   default: warn
@@ -119,6 +120,12 @@ influxdb:
       - sensor.aqara_sensor_4_temperature
       - sensor.aqara_sensor_4_humidity
       - sensor.aqara_sensor_4_pressure
+      - sensor.aqara_sensor_5_temperature
+      - sensor.aqara_sensor_5_humidity
+      - sensor.aqara_sensor_5_pressure
+      - sensor.aqara_sensor_6_temperature
+      - sensor.aqara_sensor_6_humidity
+      - sensor.aqara_sensor_6_pressure
       - sensor.darksky_humidity
       - sensor.darksky_pressure
       - sensor.darksky_temperature
@@ -127,6 +134,7 @@ influxdb:
       - sensor.tradfri_remote_control_3
       - sensor.innr_sp_120_watts
       - sensor.innr_sp_120_kwh
+      - sensor.rheinpegel
 
 deconz:
   host: 192.168.178.5

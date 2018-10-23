@@ -1,0 +1,4 @@
+---
+- name: Good bye
+  entities:
+    group.all_lights: off
