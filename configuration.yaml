@@ -32,10 +32,22 @@ cloud:
   alexa:
     filter:
       include_entities:
+        - sensor.aqara_sensor_1_temperature
+        - sensor.aqara_sensor_2_temperature
+        - sensor.aqara_sensor_3_temperature
+        - sensor.aqara_sensor_4_temperature
         - switch.vacuum
       include_domains:
         - scene
     entity_config:
+      sensor.aqara_sensor_1_temperature:
+        display_categories: TEMPERATURE_SENSOR
+      sensor.aqara_sensor_2_temperature:
+        display_categories: TEMPERATURE_SENSOR
+      sensor.aqara_sensor_3_temperature:
+        display_categories: TEMPERATURE_SENSOR
+      sensor.aqara_sensor_4_temperature:
+        display_categories: TEMPERATURE_SENSOR
       switch.vacuum:
         display_categories: OTHER
 

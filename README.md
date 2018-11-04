@@ -21,16 +21,18 @@
 * [deCONZ ConBee ZigBee USB stick](https://www.dresden-elektronik.de/conbee/) running on a Raspberry PI 3 MODEL B+
 * Cheap CC2531 USB stick for [zigbee2mqtt](https://github.com/Koenkk/zigbee2mqtt)
 
-### 💡 Lights, plugs, etc.
+### 💡 Lights, plugs, switches, etc.
 
-* IKEA TRÅDFRI with several lights and remotes
-* Osram Smart+ plugs
-* Innr SP 120 plug
+* [IKEA TRÅDFRI](https://www.ikea.com/de/de/catalog/categories/departments/lighting/smart_lighting/) with several lights and remotes
+* [Osram Smart+ plugs](https://www.osram-lamps.com/ecatalog/smart-home/smart-home-components/smart-plug/index.jsp)
+* [Innr SP 120 plug](https://shop.innrlighting.com/en/shop/113/smart-plug)
+* [Aqara Wireless Mini Switch](https://www.aqara.com/en/wireless_mini_switch.html?v20181031171614)
 
 ### 📡 Sensors
 
-* [Xiaomi Aqara Temperature and Humidity Sensors](https://xiaomi-mi.com/sockets-and-sensors/aqara-temperature-and-humidity-sensor/)
-* [Xiaomi Aqara Window Door Sensors](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-aqara-window-door-sensor/)
+* [Aqara Door and Window Sensor](https://www.aqara.com/en/door_and_window_sensor-product.html)
+* [Aqara Motion Sensor](https://www.aqara.com/en/motion_sensor.html)
+* [Aqara Temperature and Humidity Sensor](https://www.aqara.com/en/temperature_and_humidity_sensor-product.html)
 * [Xiaomi Mijia Bluetooth Temperature and Humidity Sensor](https://github.com/algirdasc/xiaomi-ble-mqtt)
 
 ### 📺 Other
