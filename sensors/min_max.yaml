@@ -1,6 +1,6 @@
 ---
 - platform: min_max
-  name: Temperatur Innen
+  name: Average room temperature
   entity_ids:
     - sensor.aqara_sensor_1_temperature
     - sensor.aqara_sensor_2_temperature
@@ -9,7 +9,7 @@
     - sensor.aqara_sensor_5_temperature
     - sensor.aqara_sensor_6_temperature
 - platform: min_max
-  name: Luftfeuchtigkeit Innen
+  name: Average room humidity
   entity_ids:
     - sensor.aqara_sensor_1_humidity
     - sensor.aqara_sensor_2_humidity
@@ -18,7 +18,7 @@
     - sensor.aqara_sensor_5_humidity
     - sensor.aqara_sensor_6_humidity
 - platform: min_max
-  name: Luftdruck Innen
+  name: Average room pressure
   entity_ids:
     - sensor.aqara_sensor_1_pressure
     - sensor.aqara_sensor_2_pressure

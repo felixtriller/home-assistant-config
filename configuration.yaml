@@ -36,6 +36,7 @@ cloud:
         - sensor.aqara_sensor_2_temperature
         - sensor.aqara_sensor_3_temperature
         - sensor.aqara_sensor_4_temperature
+        - sensor.aqara_sensor_5_temperature
         - switch.vacuum
       include_domains:
         - scene
@@ -47,6 +48,8 @@ cloud:
       sensor.aqara_sensor_3_temperature:
         display_categories: TEMPERATURE_SENSOR
       sensor.aqara_sensor_4_temperature:
+        display_categories: TEMPERATURE_SENSOR
+      sensor.aqara_sensor_5_temperature:
         display_categories: TEMPERATURE_SENSOR
       switch.vacuum:
         display_categories: OTHER
