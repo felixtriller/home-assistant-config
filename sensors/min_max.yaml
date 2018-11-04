@@ -1,6 +1,7 @@
 ---
 - platform: min_max
   name: Average room temperature
+  type: mean
   entity_ids:
     - sensor.aqara_sensor_1_temperature
     - sensor.aqara_sensor_2_temperature
@@ -10,6 +11,7 @@
     - sensor.aqara_sensor_6_temperature
 - platform: min_max
   name: Average room humidity
+  type: mean
   entity_ids:
     - sensor.aqara_sensor_1_humidity
     - sensor.aqara_sensor_2_humidity
@@ -19,6 +21,7 @@
     - sensor.aqara_sensor_6_humidity
 - platform: min_max
   name: Average room pressure
+  type: mean
   entity_ids:
     - sensor.aqara_sensor_1_pressure
     - sensor.aqara_sensor_2_pressure
