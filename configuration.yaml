@@ -181,8 +181,9 @@ homekit:
       - switch.osram_plug_1
 
 weather:
-  - platform: darksky_daily
+  - platform: darksky
     api_key: !env_var DARK_SKY_API_TOKEN
+    mode: daily
 
 group: !include_dir_merge_named groups
 sensor: !include_dir_merge_list sensors

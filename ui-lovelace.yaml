@@ -14,7 +14,7 @@ views:
     cards:
       - type: custom:weather-card
         title: Köln
-        entity_weather: weather.dark_sky_daily
+        entity_weather: weather.dark_sky
         entity_sun: sun.sun
 
       - type: entities
