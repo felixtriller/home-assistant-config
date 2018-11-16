@@ -7,6 +7,7 @@ homeassistant:
   unit_system: metric
   time_zone: Europe/Berlin
   customize: !include customize.yaml
+  packages: !include_dir_named packages
   auth_providers:
     - type: homeassistant
     - type: legacy_api_password
@@ -59,7 +60,6 @@ discovery:
     - apple_tv
     - google_cast
     - sonos
-    - igd
 
 logger:
   default: warn
@@ -178,7 +178,9 @@ media_player:
 homekit:
   filter:
     include_entities:
+      - switch.vacuum
       - switch.osram_plug_1
+      - input_boolean.someone_home
 
 weather:
   - platform: darksky

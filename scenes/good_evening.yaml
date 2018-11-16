@@ -2,6 +2,6 @@
 - name: Good evening
   entities:
     light.tradfri_bulb_e27_ws_opal_980lm:
-      state: on
+      state: 'on'
       brightness: 254
       color_temp: 454
