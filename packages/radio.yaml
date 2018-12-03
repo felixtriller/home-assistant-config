@@ -9,6 +9,7 @@ script:
     sequence:
       - service: media_player.volume_set
         data:
+          entity_id: media_player.wohnzimmer
           volume_level: 0.02
       - service: media_player.select_source
         data_template:
