@@ -1,6 +1,6 @@
-media_player.kuche:
+media_player.kitchen:
   friendly_name: Sonos Küche
-media_player.wohnzimmer:
+media_player.living_room:
   friendly_name: Sonos Wohnzimmer
 light.tradfri_bulb_e14_ws_opal_400lm_2:
   friendly_name: Licht Schlafzimmer
@@ -39,10 +39,14 @@ sensor.aqara_sensor_5_pressure:
 sensor.aqara_sensor_5_humidity:
   friendly_name: Luftfeuchtigkeit Badezimmer
 sensor.aqara_sensor_6_temperature:
-  friendly_name: Temperatur TODO
+  friendly_name: Temperatur draußen
 sensor.aqara_sensor_6_pressure:
-  friendly_name: Luftdruck TODO
+  friendly_name: Luftdruck draußen
 sensor.aqara_sensor_6_humidity:
-  friendly_name: Luftfeuchtigkeit TODO
+  friendly_name: Luftfeuchtigkeit draußen
 switch.osram_plug_1:
   friendly_name: Durchlauferhitzer Küche
+automation.boiler_on:
+  friendly_name: Durchlauferhitzer einschalten
+automation.boiler_off:
+  friendly_name: Durchlauferhitzer ausschalten

@@ -1,0 +1,19 @@
+---
+- id: boiler_on
+  alias: Boiler on
+  trigger:
+  - at: '06:00'
+    platform: time
+  action:
+  - data:
+      entity_id: switch.osram_plug_1
+    service: switch.turn_on
+- id: boiler_off
+  alias: Boiler off
+  trigger:
+  - at: '23:00'
+    platform: time
+  action:
+  - data:
+      entity_id: switch.osram_plug_1
+    service: switch.turn_off

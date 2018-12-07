@@ -113,16 +113,16 @@ views:
     id: media
     cards:
       - type: media-control
-        entity: media_player.kuche
+        entity: media_player.kitchen
 
       - type: media-control
-        entity: media_player.wohnzimmer
+        entity: media_player.living_room
 
       - type: media-control
         entity: media_player.spotify
 
       - type: media-control
-        entity: media_player.kinderzimmer
+        entity: media_player.kids
 
   - title: Misc
     id: misc
@@ -140,6 +140,8 @@ views:
         show_header_toggle: true
         entities:
           - automation.update_notifications
+          - automation.boiler_on
+          - automation.boiler_off
 
       - type: entities
         title: Zone

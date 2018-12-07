@@ -8,7 +8,6 @@
     - sensor.aqara_sensor_3_temperature
     - sensor.aqara_sensor_4_temperature
     - sensor.aqara_sensor_5_temperature
-    - sensor.aqara_sensor_6_temperature
 - platform: min_max
   name: Average room humidity
   type: mean
@@ -18,7 +17,6 @@
     - sensor.aqara_sensor_3_humidity
     - sensor.aqara_sensor_4_humidity
     - sensor.aqara_sensor_5_humidity
-    - sensor.aqara_sensor_6_humidity
 - platform: min_max
   name: Average room pressure
   type: mean
@@ -28,4 +26,3 @@
     - sensor.aqara_sensor_3_pressure
     - sensor.aqara_sensor_4_pressure
     - sensor.aqara_sensor_5_pressure
-    - sensor.aqara_sensor_6_pressure

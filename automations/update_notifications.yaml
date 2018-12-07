@@ -1,5 +1,6 @@
 ---
-- alias: Update notifications
+- id: update_notifications
+  alias: Update notifications
   trigger:
     - platform: state
       entity_id: sensor.latest_hass_version
