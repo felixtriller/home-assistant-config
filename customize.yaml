@@ -50,3 +50,5 @@ automation.boiler_on:
   friendly_name: Durchlauferhitzer einschalten
 automation.boiler_off:
   friendly_name: Durchlauferhitzer ausschalten
+switch.tv:
+  friendly_name: Fernseher

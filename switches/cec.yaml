@@ -1,0 +1,10 @@
+---
+- platform: mqtt
+  name: TV
+  command_topic: "media/cec/0/cmd"
+  payload_on: "on"
+  payload_off: "off"
+  state_topic: "media/cec/0" 
+  state_on: "on"
+  state_off: "off"
+

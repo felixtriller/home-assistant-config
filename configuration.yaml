@@ -38,6 +38,7 @@ cloud:
         - sensor.aqara_sensor_4_temperature
         - sensor.aqara_sensor_5_temperature
         - switch.vacuum
+        - switch.tv
       include_domains:
         - scene
     entity_config:
@@ -53,6 +54,8 @@ cloud:
         display_categories: TEMPERATURE_SENSOR
       switch.vacuum:
         display_categories: OTHER
+      switch.tv:
+        display_categories: TV
 
 discovery:
   ignore:
@@ -178,6 +181,7 @@ homekit:
   filter:
     include_entities:
       - switch.vacuum
+      - switch.tv
       - switch.osram_plug_1
       - input_boolean.someone_home
 
