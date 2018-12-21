@@ -1,4 +1,3 @@
----
 - platform: mqtt
   state_topic: xiaomi-ble-mqtt/xiaomi-ble1
   unit_of_measurement: °C

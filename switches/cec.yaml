@@ -1,4 +1,3 @@
----
 - platform: mqtt
   name: TV
   command_topic: "media/cec/0/cmd"

@@ -1,4 +1,3 @@
----
 - name: Good morning
   entities:
     light.tradfri_bulb_e27_ws_opal_980lm:

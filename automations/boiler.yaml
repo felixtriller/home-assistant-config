@@ -1,4 +1,3 @@
----
 - id: boiler_on
   alias: Boiler on
   trigger:

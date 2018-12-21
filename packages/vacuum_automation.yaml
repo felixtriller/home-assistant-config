@@ -1,0 +1,58 @@
+input_boolean:
+  vacuuming_scheduled:
+    name: vacuuming scheduled?
+    initial: 'off'
+    icon: mdi:robot-vacuum
+automation:
+  - id: schedule-vacuuming
+    alias: Schedule vacuuming
+    trigger:
+      platform: state
+      entity_id: sensor.aqara_switch_1
+      to: 'single'
+    action:
+      - service: input_boolean.turn_on
+        entity_id: input_boolean.vacuuming_scheduled
+      - service: notify.notify
+        data:
+          message: Vacuuming scheduled!
+  - id: unschedule-vacuuming
+    alias: Unschedule vacuuming
+    trigger:
+      platform: state
+      entity_id: sensor.aqara_switch_1
+      to: 'double'
+    action:
+      - service: input_boolean.turn_off
+        entity_id: input_boolean.vacuuming_scheduled
+      - service: notify.notify
+        data:
+          message: Vacuuming unscheduled.
+  - id: unschedule-vacuuming-evening
+    alias: Unschedule vacuuming in the evening
+    trigger:
+      platform: time
+      at: '19:00'
+    condition:
+      condition: state
+      entity_id: input_boolean.vacuuming_scheduled
+      state: 'on'
+    action:
+      service: input_boolean.turn_off
+      entity_id: input_boolean.vacuuming_scheduled
+  - id: vacuuming-if-scheduled
+    alias: Vacuuming if scheduled
+    trigger:
+      platform: state
+      entity_id: binary_sensor.aqara_door_4_contact
+      to: 'on'
+    condition:
+      condition: state
+      entity_id: input_boolean.vacuuming_scheduled
+      state: 'on'
+    action:
+      - service: input_boolean.turn_off
+        entity_id: input_boolean.vacuuming_scheduled
+      - service: notify.notify
+        data:
+          message: Starting the vacuuming!

@@ -1,4 +1,3 @@
----
 - platform: min_max
   name: Average room temperature
   type: mean

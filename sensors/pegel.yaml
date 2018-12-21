@@ -1,4 +1,3 @@
----
 - platform: rest
   name: Rheinpegel
   resource: https://www.pegelonline.wsv.de/webservices/rest-api/v2/stations/KÖLN/W.json?includeCurrentMeasurement=true

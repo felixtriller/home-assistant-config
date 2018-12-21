@@ -1,4 +1,3 @@
----
 - platform: template
   switches:
     vacuum:

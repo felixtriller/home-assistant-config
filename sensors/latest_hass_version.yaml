@@ -1,4 +1,3 @@
----
 - platform: command_line
   command: python3 -c "import requests; print(requests.get('https://pypi.python.org/pypi/homeassistant/json').json()['info']['version'])"  # yamllint disable-line rule:line-length
   name: Latest HASS version
