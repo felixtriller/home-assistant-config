@@ -44,6 +44,10 @@ sensor.aqara_sensor_6_pressure:
   friendly_name: Luftdruck draußen
 sensor.aqara_sensor_6_humidity:
   friendly_name: Luftfeuchtigkeit draußen
+binary_sensor.aqara_door_1_contact:
+  friendly_name: Kühlschrank
+binary_sensor.aqara_door_4_contact:
+  friendly_name: Wohnungstüre
 switch.osram_plug_1:
   friendly_name: Durchlauferhitzer Küche
 automation.boiler_on:

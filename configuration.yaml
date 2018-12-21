@@ -28,6 +28,10 @@ map:
 sun:
 ios:
 
+tts:
+  - platform: google
+    language: de
+
 cloud:
   alexa:
     filter:
@@ -111,12 +115,6 @@ mqtt:
     topic: 'hass/status'
     payload: 'offline'
 
-notify:
-  - name: pushover
-    platform: pushover
-    api_key: !env_var PUSHOVER_API_KEY
-    user_key: !env_var PUSHOVER_USER_KEY
-
 influxdb:
   host: influxdb
   username: !env_var INFLUXDB_USERNAME
@@ -124,7 +122,6 @@ influxdb:
   database: home_assistant
   include:
     entities:
-      - binary_sensor.aqara_door_1
       - sensor.aqara_sensor_1_humidity
       - sensor.aqara_sensor_1_pressure
       - sensor.aqara_sensor_1_temperature
@@ -143,6 +140,9 @@ influxdb:
       - sensor.aqara_sensor_6_temperature
       - sensor.aqara_sensor_6_humidity
       - sensor.aqara_sensor_6_pressure
+      - binary_sensor.aqara_door_1_battery
+      - binary_sensor.aqara_door_3_battery
+      - binary_sensor.aqara_door_4_battery
       - sensor.darksky_humidity
       - sensor.darksky_pressure
       - sensor.darksky_temperature
