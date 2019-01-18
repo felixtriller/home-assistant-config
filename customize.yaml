@@ -46,6 +46,8 @@ sensor.aqara_sensor_6_humidity:
   friendly_name: Luftfeuchtigkeit draußen
 binary_sensor.aqara_door_1_contact:
   friendly_name: Kühlschrank
+binary_sensor.aqara_door_3_contact:
+  friendly_name: Eisschrank
 binary_sensor.aqara_door_4_contact:
   friendly_name: Wohnungstüre
 switch.osram_plug_1:
@@ -54,5 +56,9 @@ automation.boiler_on:
   friendly_name: Durchlauferhitzer einschalten
 automation.boiler_off:
   friendly_name: Durchlauferhitzer ausschalten
+automation.door_alert:
+  friendly_name: Türalarm
+automation.vacuuming_if_scheduled:
+  friendly_name: Staubsauger automatik
 switch.tv:
   friendly_name: Fernseher

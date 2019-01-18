@@ -12,6 +12,7 @@ homeassistant:
     - type: homeassistant
 
 frontend:
+  themes: !include_dir_merge_named themes
 config:
 api:
 websocket_api:
@@ -191,6 +192,7 @@ weather:
     mode: daily
 
 group: !include_dir_merge_named groups
+script: !include_dir_merge_named scripts
 sensor: !include_dir_merge_list sensors
 automation: !include_dir_merge_list automations
 switch: !include_dir_merge_list switches
