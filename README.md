@@ -9,7 +9,6 @@
 * Home Assistant
 * Node Red
 * AppDaemon
-* [deCONZ](https://github.com/dresden-elektronik/deconz-rest-plugin)
 * InfluxDB
 * Grafana
 * Mosquitto
@@ -18,7 +17,6 @@
 ## Hardware
 
 * [This computer](http://browser.geekbench.com/v4/cpu/9722140) running Kubernetes on a Proxmox VE
-* [deCONZ ConBee ZigBee USB stick](https://www.dresden-elektronik.de/conbee/) running on a Raspberry PI 3 MODEL B+
 * Cheap CC2531 USB stick for [zigbee2mqtt](https://github.com/Koenkk/zigbee2mqtt)
 
 ### 💡 Lights, plugs, switches, etc.
