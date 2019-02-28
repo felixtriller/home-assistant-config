@@ -25,6 +25,7 @@ http:
   ip_ban_enabled: false
   login_attempts_threshold: 3
 
+system_health:
 map:
 sun:
 ios:
@@ -150,12 +151,7 @@ influxdb:
       - sensor.tradfri_remote_control
       - sensor.tradfri_remote_control_2
       - sensor.tradfri_remote_control_3
-      - sensor.innr_sp_120_watts
-      - sensor.innr_sp_120_kwh
       - sensor.rheinpegel
-
-deconz:
-  host: 192.168.178.5
 
 tradfri:
   host: 192.168.178.23
@@ -184,6 +180,7 @@ homekit:
       - switch.vacuum
       - switch.tv
       - switch.osram_plug_1
+      - switch.osram_plug_3
       - input_boolean.someone_home
 
 weather:
