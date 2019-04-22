@@ -15,6 +15,9 @@ spec:
       labels:
         app: node-red
     spec:
+      securityContext:
+        runAsUser: 1000
+        fsGroup: 1000
       containers:
         - name: node-red
           image: nodered/node-red-docker:v8

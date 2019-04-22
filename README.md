@@ -36,5 +36,7 @@
 ### 📺 Other
 
 * Sonos One with integrated Alexa
-* Xiaomi Roborock S50 vacuum robot
+* Sonos Play:1
+* Xiaomi Roborock S50 vacuum robot with [Valetudo](https://github.com/Hypfer/Valetudo/)
 * Chromecast Audio
+

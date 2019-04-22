@@ -168,6 +168,7 @@ sonos:
     hosts:
       - 192.168.178.31
       - 192.168.178.32
+      - 192.168.178.53
 
 media_player:
   - platform: spotify
