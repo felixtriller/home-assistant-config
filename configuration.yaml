@@ -26,12 +26,16 @@ http:
   login_attempts_threshold: 3
 
 system_health:
+updater:
+zeroconf:
+mobile_app:
+person:
 map:
 sun:
-ios:
 
 tts:
-  - platform: google
+  - platform: google_translate
+    service_name: google_say
     language: de
 
 cloud:
@@ -47,6 +51,7 @@ cloud:
         - switch.tv
       include_domains:
         - scene
+        - light
     entity_config:
       sensor.aqara_sensor_1_temperature:
         display_categories: TEMPERATURE_SENSOR
@@ -85,6 +90,7 @@ recorder:
       - sensor.iphone_x_von_felix_triller_battery_state
       - sensor.last_boot
       - switch.vacuum
+      - sensor.ssid
 
 history:
   exclude:
@@ -153,10 +159,6 @@ influxdb:
       - sensor.tradfri_remote_control_3
       - sensor.rheinpegel
 
-tradfri:
-  host: 192.168.178.23
-  allow_tradfri_groups: false
-
 vacuum:
   - platform: xiaomi_miio
     host: 192.168.178.43
@@ -181,8 +183,20 @@ homekit:
       - switch.vacuum
       - switch.tv
       - switch.osram_plug_1
-      - switch.osram_plug_3
       - input_boolean.someone_home
+      - light.lichterkette_kinderzimmer
+      - sensor.aqara_sensor_1_humidity
+      - sensor.aqara_sensor_1_temperature
+      - sensor.aqara_sensor_2_humidity
+      - sensor.aqara_sensor_2_temperature
+      - sensor.aqara_sensor_3_humidity
+      - sensor.aqara_sensor_3_temperature
+      - sensor.aqara_sensor_4_humidity
+      - sensor.aqara_sensor_4_temperature
+      - sensor.aqara_sensor_5_humidity
+      - sensor.aqara_sensor_5_temperature
+      - sensor.aqara_sensor_6_humidity
+      - sensor.aqara_sensor_6_temperature
 
 weather:
   - platform: darksky
@@ -194,6 +208,7 @@ script: !include_dir_merge_named scripts
 sensor: !include_dir_merge_list sensors
 automation: !include_dir_merge_list automations
 switch: !include_dir_merge_list switches
+light: !include_dir_merge_list lights
 zone: !include_dir_merge_list zones
 input_boolean: !include_dir_merge_named input_booleans
 timer: !include_dir_merge_named timers

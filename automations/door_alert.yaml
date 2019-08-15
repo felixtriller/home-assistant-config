@@ -9,7 +9,7 @@
       from: 'off'
       to: 'on'
       for:
-        seconds: 60
+        seconds: 180
   action:
     service: notify.notify
     data_template:
