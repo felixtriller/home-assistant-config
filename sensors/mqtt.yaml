@@ -12,4 +12,3 @@
   name: Xiaomi BLE 1 humidity
   value_template: "{{ value_json.humidity }}"
   json_attributes_topic: xiaomi-ble-mqtt/xiaomi-ble1
-
