@@ -1,0 +1,33 @@
+script:
+  vacuum_cleaning:
+    alias: Clean vacuum 
+    sequence:
+      - condition: state
+        entity_id: vacuum.roborock
+        state: 'docked'
+      - service: vacuum.xiaomi_remote_control_start
+        data:
+          entity_id: vacuum.roborock
+      - delay: '00:00:10' 
+      - service: vacuum.xiaomi_remote_control_move
+        data:
+          entity_id: vacuum.roborock
+          velocity: '0.29'
+          rotation: '0'
+          duration: '2000'
+      - delay: '00:00:05' 
+      - service: vacuum.xiaomi_remote_control_stop
+        data:
+          entity_id: vacuum.roborock
+switch:
+  - platform: template
+    switches:
+      vacuum:
+        friendly_name: Staubsauger
+        value_template: "{{ is_state('vacuum.roborock', 'cleaning') or is_state('vacuum.roborock', 'idle') }}"
+        turn_on:
+          service: vacuum.start
+          entity_id: vacuum.roborock
+        turn_off:
+          service: vacuum.return_to_base
+          entity_id: vacuum.roborock

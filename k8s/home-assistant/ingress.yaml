@@ -5,17 +5,14 @@ metadata:
   name: home-assistant
   annotations:
     kubernetes.io/ingress.class: "nginx"
-    kubernetes.io/tls-acme: "true"
-    certmanager.k8s.io/acme-challenge-type: "dns01"
-    certmanager.k8s.io/acme-dns01-provider: "cloudflare"
-    external-dns.alpha.kubernetes.io/target: "fritzbox.aomame.de"
+    external-dns.alpha.kubernetes.io/target: "k8s.lan.aomame.de"
 spec:
   tls:
-    - secretName: home-assistant-tls
+    - secretName: lan-aomame-de-tls
       hosts:
-        - hass.aomame.de
+        - hass.lan.aomame.de
   rules:
-    - host: hass.aomame.de
+    - host: hass.lan.aomame.de
       http:
         paths:
           - backend:
