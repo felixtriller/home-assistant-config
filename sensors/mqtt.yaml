@@ -1,16 +1,14 @@
 - platform: mqtt
   state_topic: xiaomi-ble-mqtt/xiaomi-ble1
   unit_of_measurement: °C
-  icon: mdi:thermometer
+  device_class: temperature
   name: Xiaomi BLE 1 temperature
   value_template: "{{ value_json.temperature }}"
-  json_attributes:
-    - battery
+  json_attributes_topic: xiaomi-ble-mqtt/xiaomi-ble1
 - platform: mqtt
   state_topic: xiaomi-ble-mqtt/xiaomi-ble1
   unit_of_measurement: "%"
-  icon: mdi:water-percent
+  device_class: humidity
   name: Xiaomi BLE 1 humidity
   value_template: "{{ value_json.humidity }}"
-  json_attributes:
-    - battery
+  json_attributes_topic: xiaomi-ble-mqtt/xiaomi-ble1

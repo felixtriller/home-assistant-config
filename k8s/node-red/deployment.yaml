@@ -17,13 +17,19 @@ spec:
     spec:
       containers:
         - name: node-red
-          image: nodered/node-red-docker:v8
+          image: nodered/node-red
           ports:
             - containerPort: 1880
           volumeMounts:
             - name: node-red-data
               mountPath: /data
+            - name: localtime
+              mountPath: /etc/localtime
+              readOnly: true
       volumes:
         - name: node-red-data
           hostPath:
             path: /home/felix/node-red-data
+        - name: localtime
+          hostPath:
+            path: /etc/localtime

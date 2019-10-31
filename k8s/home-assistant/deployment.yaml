@@ -19,7 +19,7 @@ spec:
       dnsPolicy: ClusterFirstWithHostNet
       containers:
         - name: home-assistant
-          image: homeassistant/home-assistant:0.91.1
+          image: homeassistant/home-assistant:0.99.2
           ports:
             - containerPort: 8123
           volumeMounts:
@@ -74,6 +74,11 @@ spec:
                 secretKeyRef:
                   name: home-assistant-secrets
                   key: influxdb_password
+            - name: AQICN_API_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: home-assistant-secrets
+                  key: aqicn_api_token
       volumes:
         - name: home-assistant-config
           hostPath:

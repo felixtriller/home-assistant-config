@@ -1,0 +1,4 @@
+- platform: waqi
+  token: !env_var AQICN_API_TOKEN
+  locations:
+    - cologne
