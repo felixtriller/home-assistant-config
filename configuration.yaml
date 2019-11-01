@@ -17,13 +17,7 @@ config:
 api:
 websocket_api:
 http:
-  api_password: !env_var HTTP_PASSWORD
   base_url: https://hass.lan.aomame.de
-  use_x_forwarded_for: true
-  trusted_proxies:
-    - 192.168.1.3
-  ip_ban_enabled: false
-  login_attempts_threshold: 3
 
 system_health:
 updater:

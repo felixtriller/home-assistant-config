@@ -1,6 +1,6 @@
 script:
   vacuum_cleaning:
-    alias: Clean vacuum 
+    alias: Clean vacuum
     sequence:
       - condition: state
         entity_id: vacuum.roborock
@@ -8,14 +8,14 @@ script:
       - service: vacuum.xiaomi_remote_control_start
         data:
           entity_id: vacuum.roborock
-      - delay: '00:00:10' 
+      - delay: '00:00:10'
       - service: vacuum.xiaomi_remote_control_move
         data:
           entity_id: vacuum.roborock
           velocity: '0.29'
           rotation: '0'
           duration: '2000'
-      - delay: '00:00:05' 
+      - delay: '00:00:05'
       - service: vacuum.xiaomi_remote_control_stop
         data:
           entity_id: vacuum.roborock
