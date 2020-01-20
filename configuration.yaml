@@ -172,6 +172,7 @@ homekit:
       - switch.osram_plug_1
       - input_boolean.someone_home
       - light.lichterkette_kinderzimmer
+      - light.weihnachtsbaum
       - sensor.aqara_sensor_1_humidity
       - sensor.aqara_sensor_1_temperature
       - sensor.aqara_sensor_2_humidity
