@@ -19,12 +19,15 @@ spec:
       dnsPolicy: ClusterFirstWithHostNet
       containers:
         - name: home-assistant
-          image: homeassistant/home-assistant:0.104.2
+          image: homeassistant/home-assistant:0.105.2
           ports:
             - containerPort: 8123
           volumeMounts:
             - name: home-assistant-config
               mountPath: /config
+            - name: home-assistant-secrets
+              mountPath: /root/.gcs_key.json
+              subPath: gcs_key.json
             - name: localtime
               mountPath: /etc/localtime
               readOnly: true
@@ -86,3 +89,6 @@ spec:
         - name: localtime
           hostPath:
             path: /etc/localtime
+        - name: home-assistant-secrets
+          secret:
+            secretName: home-assistant-secrets

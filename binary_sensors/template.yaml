@@ -1,0 +1,6 @@
+- platform: template
+  sensors:
+    all_windows:
+      friendly_name: Alle Fenster
+      device_class: window
+      value_template: "{{ is_state('group.all_windows', 'on') }}"

@@ -1,45 +1,57 @@
 - id: boiler_on
   alias: Boiler on
   trigger:
-    - platform: time
-      at: '06:00'
+  - platform: time
+    at: 06:00
   action:
-    - service: switch.turn_on
-      data:
-        entity_id: switch.osram_plug_1
+  - service: switch.turn_on
+    data:
+      entity_id: switch.osram_plug_1
 - id: boiler_off
   alias: Boiler off
   trigger:
-    - platform: time
-      at: '23:00'
+  - platform: time
+    at: '23:00'
   action:
-    - service: switch.turn_off
-      data:
-        entity_id: switch.osram_plug_1
+  - service: switch.turn_off
+    data:
+      entity_id: switch.osram_plug_1
 - id: door_alert
   alias: Door alert
   trigger:
-    - platform: state
-      entity_id:
-        - binary_sensor.aqara_door_1_contact
-        - binary_sensor.aqara_door_2_contact
-        - binary_sensor.aqara_door_4_contact
-      from: 'off'
-      to: 'on'
-      for:
-        seconds: 180
+  - platform: state
+    entity_id:
+    - binary_sensor.aqara_door_1_contact
+    - binary_sensor.aqara_door_2_contact
+    - binary_sensor.aqara_door_4_contact
+    from: 'off'
+    to: 'on'
+    for:
+      seconds: 180
   action:
     service: notify.notify
     data_template:
-      title: 'Close the door!'
-      message: "{{ trigger.to_state.attributes.friendly_name }} is still open."
+      title: Close the door!
+      message: '{{ trigger.to_state.attributes.friendly_name }} is still open.'
 - id: update_notifications
   alias: Update notifications
   trigger:
-    - platform: state
-      entity_id: sensor.latest_hass_version
+  - platform: state
+    entity_id: sensor.latest_hass_version
   action:
     service: notify.notify
     data_template:
-      title: 'New Home Assistant Release'
-      message: "Home Assistant {{ states.sensor.latest_hass_version.state }} is now available."
+      title: New Home Assistant Release
+      message: Home Assistant {{ states.sensor.latest_hass_version.state }} is now
+        available.
+- id: '1581026014735'
+  alias: Set theme on startup
+  description: ''
+  trigger:
+  - event: start
+    platform: homeassistant
+  condition: []
+  action:
+  - data:
+      name: noctis
+    service: frontend.set_theme

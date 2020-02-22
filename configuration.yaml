@@ -28,9 +28,10 @@ map:
 sun:
 
 tts:
-  - platform: google_translate
-    service_name: google_say
-    language: de
+  - platform: google_cloud
+    key_file: /root/.gcs_key.json
+    voice: de-DE-Wavenet-B
+    encoding: linear16
 
 cloud:
   alexa:
@@ -43,6 +44,7 @@ cloud:
         - sensor.aqara_sensor_5_temperature
         - switch.vacuum
         - switch.tv
+        - binary_sensor.all_windows
       include_domains:
         - scene
         - light
@@ -61,12 +63,13 @@ cloud:
         display_categories: OTHER
       switch.tv:
         display_categories: TV
+      binary_sensor.all_windows:
+        display_categories: CONTACT_SENSOR
 
 discovery:
   ignore:
     - apple_tv
     - google_cast
-    - sonos
 
 logger:
   default: warn
@@ -85,6 +88,8 @@ recorder:
       - sensor.last_boot
       - switch.vacuum
       - sensor.ssid
+    event_types:
+      - themes_updated
 
 history:
   exclude:
@@ -142,15 +147,9 @@ influxdb:
       - sensor.aqara_sensor_6_temperature
       - sensor.aqara_sensor_6_humidity
       - sensor.aqara_sensor_6_pressure
-      - binary_sensor.aqara_door_1_battery
-      - binary_sensor.aqara_door_3_battery
-      - binary_sensor.aqara_door_4_battery
       - sensor.darksky_humidity
       - sensor.darksky_pressure
       - sensor.darksky_temperature
-      - sensor.tradfri_remote_control
-      - sensor.tradfri_remote_control_2
-      - sensor.tradfri_remote_control_3
       - sensor.rheinpegel
 
 vacuum:
@@ -159,10 +158,9 @@ vacuum:
     token: !env_var VACUUM_TOKEN
     name: Roborock
 
-media_player:
-  - platform: spotify
-    client_id: !env_var SPOTIFY_ID
-    client_secret: !env_var SPOTIFY_SECRET
+spotify:
+  client_id: !env_var SPOTIFY_ID
+  client_secret: !env_var SPOTIFY_SECRET
 
 homekit:
   filter:
@@ -198,6 +196,6 @@ light: !include_dir_merge_list lights
 scene: !include scenes.yaml
 script: !include scripts.yaml
 sensor: !include_dir_merge_list sensors
+binary_sensor: !include_dir_merge_list binary_sensors
 switch: !include_dir_merge_list switches
 timer: !include_dir_merge_named timers
-zone: !include_dir_merge_list zones
