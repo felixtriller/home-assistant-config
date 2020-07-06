@@ -55,3 +55,20 @@
   - data:
       name: noctis
     service: frontend.set_theme
+- id: '1583962620665'
+  alias: Boiler on (fallback)
+  description: ''
+  trigger:
+  - minutes: '1'
+    platform: time_pattern
+  condition:
+  - after: 06:00
+    before: '23:00'
+    condition: time
+  - condition: state
+    entity_id: switch.osram_plug_1
+    state: 'off'
+  action:
+  - data: {}
+    entity_id: switch.osram_plug_1
+    service: switch.turn_on

@@ -19,3 +19,7 @@ known_devices.yaml
 entity_registry.yaml
 
 __pycache__
+
+www/
+themes/
+custom_components/

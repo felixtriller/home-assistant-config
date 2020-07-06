@@ -7,7 +7,12 @@ rules:
     max: 140
   new-line-at-end-of-file: disable
   document-start: disable
+  empty-lines:
+    max: 0
+    max-end: 1
+    max-start: 0
 
 ignore: |
   known_devices.yaml
   customize.yaml
+  automations.yaml

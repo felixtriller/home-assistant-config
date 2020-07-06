@@ -23,6 +23,7 @@ system_health:
 updater:
 zeroconf:
 mobile_app:
+ios:
 person:
 map:
 sun:
@@ -83,11 +84,11 @@ recorder:
     entities:
       - sun.sun
       - automation.update_notifications
-      - sensor.iphone_x_von_felix_triller_battery_level
-      - sensor.iphone_x_von_felix_triller_battery_state
       - sensor.last_boot
       - switch.vacuum
-      - sensor.ssid
+      - sensor.iphone_von_felix_triller_ssid
+      - sensor.iphone_von_felix_triller_battery_level
+      - sensor.iphone_von_felix_triller_battery_state
     event_types:
       - themes_updated
 
@@ -187,6 +188,9 @@ homekit:
 weather:
   - platform: darksky
     api_key: !env_var DARK_SKY_API_TOKEN
+    mode: daily
+  - platform: openweathermap
+    api_key: !env_var OPENWEATHERMAP_API_TOKEN
     mode: daily
 
 automation: !include automations.yaml
