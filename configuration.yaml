@@ -8,6 +8,8 @@ homeassistant:
   time_zone: Europe/Berlin
   customize: !include customize.yaml
   packages: !include_dir_named packages
+  internal_url: https://hass.lan.aomame.de
+  external_url: https://hass.lan.aomame.de
   auth_providers:
     - type: homeassistant
 
@@ -17,7 +19,6 @@ config:
 api:
 websocket_api:
 http:
-  base_url: https://hass.lan.aomame.de
 
 system_health:
 updater:
@@ -192,6 +193,10 @@ weather:
   - platform: openweathermap
     api_key: !env_var OPENWEATHERMAP_API_TOKEN
     mode: daily
+
+home_connect:
+  client_id: !env_var HOME_CONNECT_CLIENT_ID
+  client_secret: !env_var HOME_CONNECT_CLIENT_SECRET
 
 automation: !include automations.yaml
 group: !include_dir_merge_named groups

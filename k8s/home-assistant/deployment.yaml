@@ -19,7 +19,7 @@ spec:
       dnsPolicy: ClusterFirstWithHostNet
       containers:
         - name: home-assistant
-          image: homeassistant/home-assistant:0.112.3
+          image: homeassistant/home-assistant:0.113.3
           ports:
             - containerPort: 8123
           volumeMounts:
@@ -87,6 +87,16 @@ spec:
                 secretKeyRef:
                   name: home-assistant-secrets
                   key: aqicn_api_token
+            - name: HOME_CONNECT_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: home-assistant-secrets
+                  key: home_connect_client_id
+            - name: HOME_CONNECT_CLIENT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: home-assistant-secrets
+                  key: home_connect_client_secret
       volumes:
         - name: home-assistant-config
           hostPath:
