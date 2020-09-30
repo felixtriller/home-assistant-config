@@ -1,9 +1,0 @@
----
-all_windows:
-  name: Alle Fenster
-  entities:
-    - binary_sensor.aqara_door_1_contact
-    - binary_sensor.aqara_door_2_contact
-    - binary_sensor.aqara_door_3_contact
-    - binary_sensor.aqara_door_4_contact
-

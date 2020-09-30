@@ -1,15 +1,7 @@
 ---
 homeassistant:
-  name: Home
-  latitude: !secret home_latitude
-  longitude: !secret home_longitude
-  elevation: !secret home_elevation
-  unit_system: metric
-  time_zone: Europe/Berlin
   customize: !include customize.yaml
   packages: !include_dir_named packages
-  internal_url: https://hass.lan.aomame.de
-  external_url: https://hass.lan.aomame.de
   auth_providers:
     - type: homeassistant
 
@@ -28,6 +20,7 @@ ios:
 person:
 map:
 sun:
+webhook:
 
 tts:
   - platform: google_cloud
@@ -44,9 +37,12 @@ cloud:
         - sensor.aqara_sensor_3_temperature
         - sensor.aqara_sensor_4_temperature
         - sensor.aqara_sensor_5_temperature
+        - sensor.aqara_sensor_6_temperature
+        - sensor.aqara_sensor_7_temperature
+        - sensor.aqara_sensor_8_temperature
         - switch.vacuum
         - switch.tv
-        - binary_sensor.all_windows
+        - cover.sunea_io
       include_domains:
         - scene
         - light
@@ -61,12 +57,18 @@ cloud:
         display_categories: TEMPERATURE_SENSOR
       sensor.aqara_sensor_5_temperature:
         display_categories: TEMPERATURE_SENSOR
+      sensor.aqara_sensor_6_temperature:
+        display_categories: TEMPERATURE_SENSOR
+      sensor.aqara_sensor_7_temperature:
+        display_categories: TEMPERATURE_SENSOR
+      sensor.aqara_sensor_8_temperature:
+        display_categories: TEMPERATURE_SENSOR
       switch.vacuum:
         display_categories: OTHER
       switch.tv:
         display_categories: TV
-      binary_sensor.all_windows:
-        display_categories: CONTACT_SENSOR
+      cover.sunea_io:
+        display_categories: EXTERIOR_BLIND
 
 discovery:
   ignore:
@@ -86,10 +88,11 @@ recorder:
       - sun.sun
       - automation.update_notifications
       - sensor.last_boot
-      - switch.vacuum
       - sensor.iphone_von_felix_triller_ssid
       - sensor.iphone_von_felix_triller_battery_level
       - sensor.iphone_von_felix_triller_battery_state
+      - sensor.next_sunrise
+      - sensor.next_sunset
     event_types:
       - themes_updated
 
@@ -165,26 +168,64 @@ spotify:
   client_secret: !env_var SPOTIFY_SECRET
 
 homekit:
+  name: Home Assistant Bridge
   filter:
     include_entities:
-      - switch.vacuum
+      - cover.sunea_io
+      - vacuum.roborock
       - switch.tv
       - switch.osram_plug_1
       - input_boolean.someone_home
       - light.lichterkette_kinderzimmer
-      - light.weihnachtsbaum
-      - sensor.aqara_sensor_1_humidity
       - sensor.aqara_sensor_1_temperature
-      - sensor.aqara_sensor_2_humidity
+      - sensor.aqara_sensor_1_humidity
       - sensor.aqara_sensor_2_temperature
-      - sensor.aqara_sensor_3_humidity
+      - sensor.aqara_sensor_2_humidity
       - sensor.aqara_sensor_3_temperature
-      - sensor.aqara_sensor_4_humidity
+      - sensor.aqara_sensor_3_humidity
       - sensor.aqara_sensor_4_temperature
-      - sensor.aqara_sensor_5_humidity
+      - sensor.aqara_sensor_4_humidity
       - sensor.aqara_sensor_5_temperature
-      - sensor.aqara_sensor_6_humidity
+      - sensor.aqara_sensor_5_humidity
       - sensor.aqara_sensor_6_temperature
+      - sensor.aqara_sensor_6_humidity
+      - sensor.aqara_sensor_7_temperature
+      - sensor.aqara_sensor_7_humidity
+      - sensor.aqara_sensor_8_temperature
+      - sensor.aqara_sensor_8_humidity
+  entity_config:
+    sensor.aqara_sensor_1_temperature:
+      linked_battery_sensor: sensor.aqara_sensor_1_battery
+    sensor.aqara_sensor_1_humidity:
+      linked_battery_sensor: sensor.aqara_sensor_1_battery
+    sensor.aqara_sensor_2_temperature:
+      linked_battery_sensor: sensor.aqara_sensor_2_battery
+    sensor.aqara_sensor_2_humidity:
+      linked_battery_sensor: sensor.aqara_sensor_2_battery
+    sensor.aqara_sensor_3_temperature:
+      linked_battery_sensor: sensor.aqara_sensor_3_battery
+    sensor.aqara_sensor_3_humidity:
+      linked_battery_sensor: sensor.aqara_sensor_3_battery
+    sensor.aqara_sensor_4_temperature:
+      linked_battery_sensor: sensor.aqara_sensor_4_battery
+    sensor.aqara_sensor_4_humidity:
+      linked_battery_sensor: sensor.aqara_sensor_4_battery
+    sensor.aqara_sensor_5_temperature:
+      linked_battery_sensor: sensor.aqara_sensor_5_battery
+    sensor.aqara_sensor_5_humidity:
+      linked_battery_sensor: sensor.aqara_sensor_5_battery
+    sensor.aqara_sensor_6_temperature:
+      linked_battery_sensor: sensor.aqara_sensor_6_battery
+    sensor.aqara_sensor_6_humidity:
+      linked_battery_sensor: sensor.aqara_sensor_6_battery
+    sensor.aqara_sensor_7_temperature:
+      linked_battery_sensor: sensor.aqara_sensor_7_battery
+    sensor.aqara_sensor_7_humidity:
+      linked_battery_sensor: sensor.aqara_sensor_7_battery
+    sensor.aqara_sensor_8_temperature:
+      linked_battery_sensor: sensor.aqara_sensor_8_battery
+    sensor.aqara_sensor_8_humidity:
+      linked_battery_sensor: sensor.aqara_sensor_8_battery
 
 weather:
   - platform: darksky
@@ -198,13 +239,13 @@ home_connect:
   client_id: !env_var HOME_CONNECT_CLIENT_ID
   client_secret: !env_var HOME_CONNECT_CLIENT_SECRET
 
+zigbee2mqtt_networkmap:
+
 automation: !include automations.yaml
-group: !include_dir_merge_named groups
 input_boolean: !include_dir_merge_named input_booleans
 light: !include_dir_merge_list lights
 scene: !include scenes.yaml
 script: !include scripts.yaml
 sensor: !include_dir_merge_list sensors
-binary_sensor: !include_dir_merge_list binary_sensors
 switch: !include_dir_merge_list switches
 timer: !include_dir_merge_named timers

@@ -20,3 +20,29 @@
       unit_of_measurement: "%"
       icon_template: mdi:water-percent
       value_template: "{{ states.weather.dark_sky.attributes.humidity }}"
+
+    dwd_temperature:
+      device_class: temperature
+      unique_id: template_dwd_temperature
+      unit_of_measurement: "°C"
+      value_template: "{{ state_attr('weather.dwd_weather_koeln_bonn', 'temperature') }}"
+
+    dwd_pressure:
+      device_class: pressure
+      unique_id: template_dwd_pressure
+      unit_of_measurement: hPa
+      value_template: "{{ state_attr('weather.dwd_weather_koeln_bonn', 'pressure') }}"
+
+    dwd_humidity:
+      device_class: humidity
+      unique_id: template_dwd_humidity
+      unit_of_measurement: "%"
+      value_template: "{{ state_attr('weather.dwd_weather_koeln_bonn', 'humidity') }}"
+
+    next_sunrise:
+      unique_id: template_next_sunrise
+      value_template: "{{ as_timestamp(state_attr('sun.sun','next_rising')) | timestamp_custom('%H:%M:%S', true) }}"
+
+    next_sunset:
+      unique_id: template_next_sunset
+      value_template: "{{ as_timestamp(state_attr('sun.sun','next_setting')) | timestamp_custom('%H:%M:%S', true) }}"
