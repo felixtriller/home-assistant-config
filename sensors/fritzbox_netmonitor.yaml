@@ -1,0 +1,3 @@
+- platform: fritzbox_netmonitor
+  host: 192.168.2.1
+  name: fritzbox

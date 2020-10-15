@@ -19,7 +19,7 @@ spec:
       dnsPolicy: ClusterFirstWithHostNet
       containers:
         - name: home-assistant
-          image: homeassistant/home-assistant:0.115.2
+          image: homeassistant/home-assistant:0.116.2
           ports:
             - containerPort: 8123
           volumeMounts:
@@ -47,16 +47,6 @@ spec:
                 secretKeyRef:
                   name: home-assistant-secrets
                   key: vacuum_token
-            - name: DARK_SKY_API_TOKEN
-              valueFrom:
-                secretKeyRef:
-                  name: home-assistant-secrets
-                  key: dark_sky_api_token
-            - name: OPENWEATHERMAP_API_TOKEN
-              valueFrom:
-                secretKeyRef:
-                  name: home-assistant-secrets
-                  key: openweathermap_api_token
             - name: MQTT_PASSWORD
               valueFrom:
                 secretKeyRef:

@@ -152,9 +152,9 @@ influxdb:
       - sensor.aqara_sensor_6_temperature
       - sensor.aqara_sensor_6_humidity
       - sensor.aqara_sensor_6_pressure
-      - sensor.darksky_humidity
-      - sensor.darksky_pressure
-      - sensor.darksky_temperature
+      - sensor.dwd_humidity
+      - sensor.dwd_pressure
+      - sensor.dwd_temperature
       - sensor.rheinpegel
 
 vacuum:
@@ -226,14 +226,6 @@ homekit:
       linked_battery_sensor: sensor.aqara_sensor_8_battery
     sensor.aqara_sensor_8_humidity:
       linked_battery_sensor: sensor.aqara_sensor_8_battery
-
-weather:
-  - platform: darksky
-    api_key: !env_var DARK_SKY_API_TOKEN
-    mode: daily
-  - platform: openweathermap
-    api_key: !env_var OPENWEATHERMAP_API_TOKEN
-    mode: daily
 
 home_connect:
   client_id: !env_var HOME_CONNECT_CLIENT_ID

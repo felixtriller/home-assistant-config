@@ -1,3 +1,6 @@
 - platform: switch
   name: Lichterkette Kinderzimmer
   entity_id: switch.innr_plug_1
+- platform: switch
+  name: Licht Abstellkammer
+  entity_id: switch.shelly1_bcddc2771fc6

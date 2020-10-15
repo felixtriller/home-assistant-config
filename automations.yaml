@@ -72,3 +72,43 @@
   - data: {}
     entity_id: switch.osram_plug_1
     service: switch.turn_on
+- id: '1602449938929'
+  alias: Licht Abstellkammer einschalten
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.aqara_door_2_contact
+    to: 'on'
+  condition: []
+  action:
+  - type: turn_on
+    device_id: fcef03da0be111eb856dfbce6dea3def
+    entity_id: switch.shelly1_bcddc2771fc6
+    domain: switch
+  mode: single
+- id: '1602449956067'
+  alias: Licht Abstellkammer ausschalten
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.aqara_door_2_contact
+    to: 'off'
+  condition: []
+  action:
+  - type: turn_off
+    device_id: fcef03da0be111eb856dfbce6dea3def
+    entity_id: switch.shelly1_bcddc2771fc6
+    domain: switch
+  mode: single
+- id: '1602504158162'
+  alias: Licht Abstellkammer
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.aqara_door_2_contact
+  condition: []
+  action:
+  - service_template: "{% if is_state('binary_sensor.aqara_door_2_contact', 'on')\
+      \ %}\n  light.turn_on\n{% else %}\n  light.turn_off\n{% endif %}\n"
+    entity_id: light.licht_abstellkammer
+  mode: single
